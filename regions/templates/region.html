@@ -9,11 +9,13 @@
     {{ region.region }}
 {%endblock site_name%}
 {% block content %}
+    {% if region.background %}
     <script>
         $(document).ready(function(){
             $('body').css({'background-image': 'url({{ region.background.url }})', "background-attachment": "fixed", "backdrop-filter": "blur(7px) brightness(50%)", "background-repeat":"no-repeat", "background-size": "cover"});
         });
     </script>
+    {% endif %}
     <div class="region-wrapper">
         <div class="region-block">
             <img src="{{ region.image.url }}" alt='{{ region.region }}'>
